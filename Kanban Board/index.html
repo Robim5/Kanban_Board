@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <h1>Kanban Board</h1>
+    <div class="kanban-board">
+        <div class="column backlog">
+            <h3>Backlog</h3>
+            <div class="tasks" id="backlogsection"></div>
+        </div>
+
+        <div class="column doing">
+            <h3>Doing</h3>
+            <div class="tasks" id="doingsection"></div>
+        </div>
+
+        <div class="column review">
+            <h3>Review</h3>
+            <div class="tasks" id="reviewsection"></div>
+        </div>
+
+        <div class="column done">
+            <h3>Done</h3>
+            <div class="tasks" id="donesection"></div>
+        </div>
+    </div>
+
+    <!-- Button to add a new task -->
+    <div class="buttonadd">
+        <button id="addnewtask">Add New Task <i class='bx bxs-add-to-queue'></i></button>
+    </div>
+
+    <!-- Overlay for modal windows -->
+    <div id="overlay"></div>
+
+    <!-- Window to create a new note -->
+    <div class="windowwrite">
+        <i class='bx bx-window-close' id="closewindowwrite"></i>
+        <input type="text" id="titleInput" placeholder="Enter title for a task">
+        <input type="text" id="descrInput" placeholder="Enter description for the task">
+        <p>Select the State</p>
+        <select name="state" id="stateselect" title="Select state">
+            <option value="backlog">Backlog</option><!--photo of note: prio/backlog.png-->
+            <option value="doing">Doing</option><!--photo of note: prio/doing.png-->
+            <option value="review">Review</option><!--photo of note: prio/done.png-->
+            <option value="done">Done</option><!--photo of note: prio/review.png-->
+        </select>
+        <button id="addtotable">Add Task <i class='bx bxs-add-to-queue'></i></button>
+    </div>
+
+    <!-- Window to view and manage a note -->
+    <div class="seewindow">
+        
+        <div class="seenote">
+            <h2 id="notetitle"></h2>
+            <p id="notetext"></p>
+            <button id="closenote">Close <i class='bx bxs-book-content'></i></button>
+            <button id="deletenote">Delete <i class='bx bxs-folder-minus'></i></button>
+            <button id="editnotedesc">Edit <i class='bx bx-edit-alt'></i></button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
